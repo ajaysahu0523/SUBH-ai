@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">SUBH AI</string>
+    <string name="assistant_title">SUBH AI</string>
+    <string name="assistant_subtitle_ready">JARVIS Core • Hindi, English &amp; Hinglish</string>
+    <string name="initial_greeting">नमस्ते! आपका स्वागत है। मैं SUBH AI हूँ। बताइए, मैं आपकी क्या मदद कर सकती हूँ?</string>
+
+    <string name="sample_ai_notice">Sample AI Mode • Live Gemini AI requires Firebase in AI Studio</string>
+
+    <string name="status_ready">SUBH AI READY • Tap Orb or Mic</string>
+    <string name="status_listening">SUBH AI IS LISTENING</string>
+    <string name="status_thinking">SUBH AI IS THINKING</string>
+    <string name="status_speaking">SUBH AI IS SPEAKING</string>
+    <string name="status_sleeping">SLEEP MODE • Say "Hey SUBH" to wake</string>
+    <string name="status_paused">PAUSED IN BACKGROUND • Return to resume</string>
+    <string name="status_mic_off">MICROPHONE OFF • Tap Mic toggle to enable</string>
+
+    <string name="conv_mode_on">Continuous: ON</string>
+    <string name="conv_mode_off">Continuous: OFF</string>
+
+    <string name="lang_auto">Auto</string>
+    <string name="lang_hindi">हिन्दी</string>
+    <string name="lang_english">English</string>
+
+    <string name="hint_type_message">Chat with SUBH AI in Hindi, English or Hinglish…</string>
+    <string name="btn_start_conversation">Start</string>
+    <string name="btn_stop_listening">Stop</string>
+    <string name="btn_allow">Allow</string>
+    <string name="btn_deny">No Thanks</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Home Navigation Pills -->
+    <string name="nav_voice_settings">Voice</string>
+    <string name="nav_ai_settings">AI Settings</string>
+    <string name="nav_memory_settings">Memory</string>
+    <string name="nav_history">History</string>
+    <string name="nav_chat_focus">Chat</string>
+
+    <string name="chip_youtube">Open YouTube</string>
+    <string name="chip_google">Search Google AI</string>
+    <string name="chip_weather">Weather Today</string>
+    <string name="chip_news">Latest News</string>
+    <string name="chip_math">25 * 48 + 120</string>
+    <string name="chip_joke">Tell a joke</string>
+    <string name="chip_hindi_ask">तुम क्या कर सकती हो?</string>
+
+    <string name="clear_chat_title">Clear Conversation?</string>
+    <string name="clear_chat_message">This will clear your local conversation history and reset the initial SUBH AI greeting.</string>
+    <string name="clear_confirm">Clear</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="mic_usage_title">Microphone Access for SUBH AI</string>
+    <string name="mic_usage_message">SUBH AI uses your microphone only while this screen is active (or in foreground standby when you enable "Hey SUBH") to understand your voice commands in Hindi, English, and Hinglish. Audio is never secretly recorded in the background.</string>
+    <string name="mic_usage_continue">Continue</string>
+
+    <string name="mic_permission_needed">Microphone permission is required for voice input and "Hey SUBH" wake mode.</string>
+    <string name="mic_permission_settings">Settings</string>
+    <string name="speech_not_available">Speech recognition service is unavailable on this device. You can still type your message below.</string>
+    <string name="copied_to_clipboard">Message copied</string>
+    <string name="voice_muted">Voice output muted</string>
+    <string name="voice_unmuted">Voice output enabled</string>
+    <string name="mic_enabled_msg">Microphone control ON</string>
+    <string name="mic_disabled_msg">Microphone control OFF</string>
+
+    <!-- Settings Dashboard -->
+    <string name="title_settings">SUBH AI Settings</string>
+    <string name="section_appearance">AI Settings &amp; Appearance</string>
+    <string name="theme_dark">Dark JARVIS</string>
+    <string name="theme_light">Light Holo</string>
+    <string name="theme_system">System</string>
+    <string name="battery_saver_label">Battery-Friendly Animations</string>
+    <string name="battery_saver_desc">Reduces orb and scanner frame intensity to save battery</string>
+
+    <string name="section_voice_audio">Female Voice &amp; Speech Settings</string>
+    <string name="setting_auto_voice_reply">Automatic Voice Replies</string>
+    <string name="tts_speed_label">Speaking Speed</string>
+    <string name="tts_pitch_label">Voice Softness / Pitch</string>
+    <string name="tts_volume_label">Speaking Volume</string>
+    <string name="tts_hindi_voice_label">Hindi Female Voice</string>
+    <string name="tts_english_voice_label">English Female Voice</string>
+    <string name="voice_data_status_checking">Checking installed Hindi &amp; English voice packs…</string>
+    <string name="btn_test_voice">Test Female Voice</string>
+    <string name="btn_install_voice_data">Download / Install Voice Data</string>
+    <string name="voice_installer_unavailable">TTS voice installer could not be opened on this device. Check Android System Settings → Accessibility → Text-to-speech.</string>
+    <string name="test_voice_sample">Hello! I am SUBH AI, your personal assistant. नमस्ते, मैं SUBH AI हूँ, आपकी मदद के लिए तैयार हूँ।</string>
+    <string name="setting_conv_mode">Continuous Conversation Mode</string>
+    <string name="setting_mic_control">Microphone Input Enabled</string>
+
+    <string name="section_privacy_memory">Memory &amp; Privacy Settings</string>
+    <string name="setting_memory_enabled">Personal Memory ON/OFF</string>
+    <string name="setting_memory_desc">When OFF, SUBH AI stops saving or recalling personal preferences and notes</string>
+    <string name="privacy_mic_summary">Microphone Policy: Voice recognition runs strictly with your permission while SUBH AI is in the foreground. Sensitive actions like Contacts and Reminders always ask for confirmation first.</string>
+    <string name="btn_clear_chat_history">Clear Chat History</string>
+    <string name="btn_clear_all_memory">Clear Personal Memory &amp; Notes</string>
+
+    <!-- Chat History Screen -->
+    <string name="title_history">Conversation History</string>
+    <string name="hint_search_history">Search past conversations…</string>
+    <string name="filter_all">All</string>
+    <string name="filter_commands">Commands</string>
+    <string name="filter_ai">AI Replies</string>
+    <string name="history_empty">No matching conversation history found.</string>
+
+    <!-- Profile, Notes & Reminders Screen -->
+    <string name="title_profile">Profile, Notes &amp; Tasks</string>
+    <string name="section_user_profile">Preferred Name &amp; Memory</string>
+    <string name="hint_preferred_name">Enter preferred name</string>
+    <string name="btn_save_name">Save Name</string>
+    <string name="interests_label">Saved Preferences</string>
+    <string name="section_saved_notes">Saved Notes</string>
+    <string name="hint_add_note">Add an important note…</string>
+    <string name="btn_add_note">Save Note</string>
+    <string name="section_reminders">Tasks &amp; Reminders</string>
+    <string name="hint_add_reminder">Add a daily task or reminder…</string>
+    <string name="btn_add_reminder">Add Task</string>
+    <string name="btn_add_calendar">Calendar</string>
+    <string name="btn_delete">Delete</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_logo">SUBH AI official logo</string>
+    <string name="cd_orb">SUBH AI holographic core</string>
+    <string name="cd_mic">Start conversation listening</string>
+    <string name="cd_mic_toggle">Toggle microphone ON or OFF</string>
+    <string name="cd_stop">Stop conversation or interrupt speech</string>
+    <string name="cd_send">Send message</string>
+    <string name="cd_mute">Toggle voice output</string>
+    <string name="cd_clear">Clear conversation history</string>
+    <string name="cd_profile">Open profile, notes and reminders</string>
+    <string name="cd_history">Open conversation history</string>
+    <string name="cd_settings">Open settings dashboard</string>
+    <string name="cd_back">Navigate back</string>
+    <string name="cd_replay">Speak message aloud</string>
+    <string name="cd_copy">Copy message</string>
+</resources>

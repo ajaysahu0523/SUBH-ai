@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_futuristic_navy"
+    tools:context=".MainActivity">
+
+    <!-- Top Futuristic Glass Header -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_glass"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/headerOrbAvatar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/cd_orb"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_subh_orb"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="@color/cyan_glow"
+                app:strokeWidth="1.5dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/assistantTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/orbitron"
+                    android:letterSpacing="0.1"
+                    android:text="@string/assistant_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/headerSubtitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/space_grotesk"
+                    android:maxLines="1"
+                    android:text="@string/assistant_subtitle_ready"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/historyButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_history"
+                android:padding="12dp"
+                android:src="@drawable/ic_history"
+                app:tint="@color/text_primary" />
+
+            <ImageButton
+                android:id="@+id/profileButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_profile"
+                android:padding="12dp"
+                android:src="@drawable/ic_person"
+                app:tint="@color/text_primary" />
+
+            <ImageButton
+                android:id="@+id/muteToggleButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_mute"
+                android:padding="12dp"
+                android:src="@drawable/ic_volume_up"
+                app:tint="@color/cyan_glow" />
+
+            <ImageButton
+                android:id="@+id/settingsButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_settings"
+                android:padding="12dp"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/text_primary" />
+        </LinearLayout>
+
+        <!-- Continuous Conversation & Language Mode Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/conversationModeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/space_grotesk"
+                android:minHeight="48dp"
+                android:text="@string/conv_mode_on"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                app:thumbTint="@color/cyan_glow"
+                app:trackTint="@color/navy_surface_elevated" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chip_pill"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/langAutoBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_lang_pill_selected"
+                    android:fontFamily="@font/space_grotesk"
+                    android:gravity="center"
+                    android:minWidth="48dp"
+                    android:minHeight="34dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/lang_auto"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/langHindiBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/space_grotesk"
+                    android:gravity="center"
+                    android:minWidth="48dp"
+                    android:minHeight="34dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/lang_hindi"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/langEnglishBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/space_grotesk"
+                    android:gravity="center"
+                    android:minWidth="48dp"
+                    android:minHeight="34dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/lang_english"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Sample AI Mode Notice Banner -->
+    <LinearLayout
+        android:id="@+id/sampleNoticeBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_notice_banner"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_info" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/space_grotesk"
+            android:text="@string/sample_ai_notice"
+            android:textColor="@color/amber_notice"
+            android:textSize="10.5sp" />
+    </LinearLayout>
+
+    <!-- Centered Futuristic JARVIS Hero Stage: Logo + Large Animated Orb + Live Telemetry -->
+    <LinearLayout
+        android:id="@+id/heroStageContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_hero_stage"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sampleNoticeBanner">
+
+        <!-- Stylish SUBH AI Logo Above the AI Orb -->
+        <LinearLayout
+            android:id="@+id/heroLogoBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@string/cd_logo"
+                android:src="@drawable/ic_subh_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/orbitron"
+                android:letterSpacing="0.18"
+                android:text="@string/assistant_title"
+                android:textColor="@color/cyan_glow"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Large Central Animated Holographic Orb -->
+        <com.example.ui.JarvisOrbView
+            android:id="@+id/jarvisOrbView"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="2dp"
+            android:clickable="true"
+            android:contentDescription="@string/cd_orb"
+            android:focusable="true" />
+
+        <!-- Status Readout: SUBH AI IS LISTENING / THINKING / SPEAKING -->
+        <TextView
+            android:id="@+id/assistantStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center"
+            android:letterSpacing="0.08"
+            android:text="@string/status_ready"
+            android:textColor="@color/cyan_glow"
+            android:textSize="11.5sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/liveTranscriptText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/space_grotesk"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/assistant_subtitle_ready"
+            android:textColor="@color/text_secondary"
+            android:textSize="11.5sp" />
+
+        <TextView
+            android:id="@+id/contextTopicBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/space_grotesk"
+            android:textColor="@color/purple_neon"
+            android:textSize="10.5sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Quick Access Feature Bar: Chat, Voice Settings, History, AI Settings, Memory Settings -->
+    <HorizontalScrollView
+        android:id="@+id/homeControlsScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="14dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heroStageContainer">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/quickChatFocusBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:text="@string/nav_chat_focus"
+                android:textColor="@color/cyan_glow"
+                android:textSize="11.5sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/quickVoiceSettingsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:text="@string/nav_voice_settings"
+                android:textColor="@color/text_primary"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/quickHistoryBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:text="@string/nav_history"
+                android:textColor="@color/text_primary"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/quickAiSettingsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:text="@string/nav_ai_settings"
+                android:textColor="@color/text_primary"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/quickMemorySettingsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:text="@string/nav_memory_settings"
+                android:textColor="@color/purple_neon"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Inline Memory / Sensitive Action Consent Card -->
+    <LinearLayout
+        android:id="@+id/memoryConsentCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_bubble_assistant"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeControlsScroll">
+
+        <TextView
+            android:id="@+id/memoryConsentPromptText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/space_grotesk"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/memoryDenyButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/btn_deny"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/memoryAllowButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/blue_electric"
+                android:text="@string/btn_allow"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Conversation Chat RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@id/suggestionScroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/memoryConsentCard" />
+
+    <!-- Quick Voice/Text Command Suggestion Chips -->
+    <HorizontalScrollView
+        android:id="@+id/suggestionScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="3dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/bottomControlDock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chipWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:minHeight="38dp"
+                android:paddingHorizontal="13dp"
+                android:text="@string/chip_weather"
+                android:textColor="@color/cyan_glow"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/chipNews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:minHeight="38dp"
+                android:paddingHorizontal="13dp"
+                android:text="@string/chip_news"
+                android:textColor="@color/text_primary"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/chipYoutube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:minHeight="38dp"
+                android:paddingHorizontal="13dp"
+                android:text="@string/chip_youtube"
+                android:textColor="@color/cyan_glow"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/chipMath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:minHeight="38dp"
+                android:paddingHorizontal="13dp"
+                android:text="@string/chip_math"
+                android:textColor="@color/purple_neon"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/chipGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:minHeight="38dp"
+                android:paddingHorizontal="13dp"
+                android:text="@string/chip_google"
+                android:textColor="@color/text_primary"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/chipJoke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:minHeight="38dp"
+                android:paddingHorizontal="13dp"
+                android:text="@string/chip_joke"
+                android:textColor="@color/purple_neon"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/chipHindiAsk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chip_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/space_grotesk"
+                android:gravity="center"
+                android:minHeight="38dp"
+                android:paddingHorizontal="13dp"
+                android:text="@string/chip_hindi_ask"
+                android:textColor="@color/text_primary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Bottom Voice & Text Control Dock -->
+    <LinearLayout
+        android:id="@+id/bottomControlDock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input_dock"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Text Chat Input Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/messageInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_field"
+                android:fontFamily="@font/space_grotesk"
+                android:hint="@string/hint_type_message"
+                android:imeOptions="actionSend"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines="3"
+                android:minHeight="48dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_muted"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/sendButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_send_button"
+                android:contentDescription="@string/cd_send"
+                android:padding="12dp"
+                android:src="@drawable/ic_send"
+                app:tint="@color/white" />
+        </LinearLayout>
+
+        <!-- Mic ON/OFF, Glowing Start Conversation Mic & Stop Conversation Row -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <ImageButton
+                android:id="@+id/micEnabledToggleButton"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_chip_pill"
+                android:contentDescription="@string/cd_mic_toggle"
+                android:padding="14dp"
+                android:src="@drawable/ic_mic"
+                app:layout_constraintBottom_toBottomOf="@id/micContainer"
+                app:layout_constraintEnd_toStartOf="@id/micContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/micContainer"
+                app:tint="@color/cyan_glow" />
+
+            <FrameLayout
+                android:id="@+id/micContainer"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:id="@+id/micGlowRing"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_gravity="center"
+                    android:alpha="0.45"
+                    android:background="@drawable/bg_mic_glow_outer" />
+
+                <ImageButton
+                    android:id="@+id/startListeningButton"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_mic_button"
+                    android:contentDescription="@string/cd_mic"
+                    android:elevation="8dp"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_mic"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/stopListeningButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_stop_button_idle"
+                android:clickable="true"
+                android:contentDescription="@string/cd_stop"
+                android:focusable="true"
+                android:gravity="center"
+                android:minWidth="88dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/micContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/micContainer"
+                app:layout_constraintTop_toTopOf="@id/micContainer">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_stop"
+                    app:tint="@color/text_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/space_grotesk"
+                    android:text="@string/btn_stop_listening"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

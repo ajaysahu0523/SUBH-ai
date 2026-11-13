@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profileRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_futuristic_navy"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/profileHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_glass"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp">
+
+        <ImageButton
+            android:id="@+id/profileBackButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_back"
+            android:padding="12dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/text_primary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/orbitron"
+            android:text="@string/title_profile"
+            android:textColor="@color/text_primary"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile & Memory -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/orbitron"
+                android:text="@string/section_user_profile"
+                android:textColor="@color/cyan_glow"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_bubble_assistant"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/preferredNameInput"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input_field"
+                        android:fontFamily="@font/space_grotesk"
+                        android:hint="@string/hint_preferred_name"
+                        android:inputType="textPersonName"
+                        android:paddingHorizontal="14dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/saveNameButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/blue_electric"
+                        android:text="@string/btn_save_name"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/space_grotesk"
+                    android:text="@string/interests_label"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/savedInterestsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/space_grotesk"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Saved Notes -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/orbitron"
+                android:text="@string/section_saved_notes"
+                android:textColor="@color/cyan_glow"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_bubble_assistant"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/addNoteInput"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input_field"
+                        android:fontFamily="@font/space_grotesk"
+                        android:hint="@string/hint_add_note"
+                        android:inputType="textCapSentences"
+                        android:paddingHorizontal="14dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addNoteButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/purple_vivid"
+                        android:text="@string/btn_add_note"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notesListContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <!-- Tasks & Reminders -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/orbitron"
+                android:text="@string/section_reminders"
+                android:textColor="@color/cyan_glow"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_bubble_assistant"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/addReminderInput"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input_field"
+                        android:fontFamily="@font/space_grotesk"
+                        android:hint="@string/hint_add_reminder"
+                        android:inputType="textCapSentences"
+                        android:paddingHorizontal="14dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addReminderButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/blue_electric"
+                        android:text="@string/btn_add_reminder"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/remindersListContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

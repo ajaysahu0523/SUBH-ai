@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light JARVIS Holographic Palette -->
+    <color name="navy_deepest">#FFF1F5F9</color>
+    <color name="navy_dark">#FFE2E8F0</color>
+    <color name="navy_surface">#FFFFFFFF</color>
+    <color name="navy_surface_elevated">#FFE8EEFA</color>
+    <color name="navy_border">#FFCBD5E1</color>
+
+    <color name="header_glass_bg">#EBF8FAFC</color>
+    <color name="dock_bg_start">#FFF1F5F9</color>
+    <color name="dock_bg_end">#EBFFFFFF</color>
+    <color name="assistant_bubble_start">#FFFFFFFF</color>
+    <color name="assistant_bubble_end">#FFF1F5FD</color>
+    <color name="assistant_bubble_stroke">#662563EB</color>
+    <color name="backdrop_start">#FFF8FAFC</color>
+    <color name="backdrop_center">#FFEFF6FF</color>
+    <color name="backdrop_end">#FFF3E8FF</color>
+
+    <color name="cyan_glow">#FF0284C7</color>
+    <color name="blue_electric">#FF2563EB</color>
+    <color name="purple_vivid">#FF7C3AED</color>
+    <color name="purple_neon">#FF9333EA</color>
+    <color name="coral_stop">#FFDB2777</color>
+    <color name="emerald_active">#FF059669</color>
+    <color name="amber_notice">#FFD97706</color>
+
+    <color name="text_primary">#FF0F172A</color>
+    <color name="text_secondary">#FF475569</color>
+    <color name="text_muted">#FF64748B</color>
+    <color name="notice_bg">#FFFFFBEB</color>
+    <color name="notice_stroke">#66D97706</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

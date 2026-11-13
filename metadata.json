@@ -1,0 +1,6 @@
+{
+  "name": "SUBH AI",
+  "description": "Futuristic bilingual Hindi and English AI voice assistant built in Java with SpeechRecognizer, TextToSpeech, voice commands, and Gemini via Firebase AI Logic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
